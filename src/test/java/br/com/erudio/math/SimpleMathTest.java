@@ -1,8 +1,9 @@
 package br.com.erudio.math;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class SimpleMathTest {
 
@@ -12,10 +13,13 @@ class SimpleMathTest {
         SimpleMath math = new SimpleMath();
 
         // Act
-        Double result = math.sum(6.2D, 2D);
+        Double current = math.sum(6.2D, 2D);
+        Double expected = 8.2D;
 
         // Assert
-        Assertions.assertEquals(8.2D, result);
+        assertEquals(expected, current, "6.2 + 2 did not product 8.2");
+        assertNotEquals(9.2, current);
+        assertNotNull(current);
     }
 
 
