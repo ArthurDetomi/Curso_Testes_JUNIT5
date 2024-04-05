@@ -11,13 +11,16 @@ class SimpleMathTest {
     void testSum() {
         // Arrange
         SimpleMath math = new SimpleMath();
+        double firstNumber = 6.2D;
+        double secondNumber = 2D;
+        Double expected = 8.2D;
+        String message = firstNumber + " + " + secondNumber + " did not product " + expected;
 
         // Act
-        Double current = math.sum(6.2D, 2D);
-        Double expected = 8.2D;
+        Double current = math.sum(firstNumber, secondNumber);
 
         // Assert
-        assertEquals(expected, current, "6.2 + 2 did not product 8.2");
+        assertEquals(expected, current, () -> message);
         assertNotEquals(9.2, current);
         assertNotNull(current);
     }
