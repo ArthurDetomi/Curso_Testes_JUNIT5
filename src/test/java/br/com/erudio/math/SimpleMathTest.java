@@ -1,14 +1,17 @@
 package br.com.erudio.math;
 
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Test Math Operations in SimpleMath Class")
 class SimpleMathTest {
 
     @Test
-    void testSum() {
+    @DisplayName("Test 6.2 + 2 = 8.2")
+    void testSum_When_SixDotTwoIsAddedByTwo_ShouldReturnEightDotTwo() {
         // Arrange
         SimpleMath math = new SimpleMath();
         double firstNumber = 6.2D;
@@ -25,8 +28,14 @@ class SimpleMathTest {
         assertNotNull(current);
     }
 
+    @Test
+    void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
+        fail();
+    }
+
 
     @Test
+    @DisplayName("Test 6.2 - 2 = 4.2")
     void subtractionTest() {
         // Arrange
         SimpleMath math = new SimpleMath();
@@ -43,6 +52,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test 6.2 x 2 = 12.4")
     void multiplicationTest() {
         // Arrange
         SimpleMath math = new SimpleMath();
@@ -59,6 +69,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test 6 / 2 = 3")
     void divisionTest() {
         // Arrange
         SimpleMath math = new SimpleMath();
