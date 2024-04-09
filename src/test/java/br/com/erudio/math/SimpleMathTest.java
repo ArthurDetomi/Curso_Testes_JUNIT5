@@ -37,17 +37,17 @@ class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 - 2 = 4.2")
     void subtractionTest() {
-        // Arrange
+        // Arrange - Given
         SimpleMath math = new SimpleMath();
         double firstNumber = 6.2D;
         double secondNumber = 2D;
         Double expected = 4.2D;
         String message = firstNumber + " - " + secondNumber + " did not product " + expected;
 
-        // Act
+        // Act - When
         Double current = math.subtraction(firstNumber, secondNumber);
 
-        // Assert
+        // Assert - Then
         assertEquals(expected, current, () -> message);
     }
 
