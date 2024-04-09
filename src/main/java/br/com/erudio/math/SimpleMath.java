@@ -14,7 +14,10 @@ public class SimpleMath {
         return firstNumber * secondNumber;
     }
 
-    public Double division(Double firstNumber, Double secondNumber) {
+    public Double division(Double firstNumber, Double secondNumber) throws ArithmeticException {
+        if (secondNumber == 0D) {
+            throw new ArithmeticException("Não existe divisão por 0!");
+        }
         return firstNumber / secondNumber;
     }
 

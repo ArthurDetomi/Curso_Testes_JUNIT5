@@ -30,7 +30,17 @@ class SimpleMathTest {
 
     @Test
     void testDivision_When_FirstNumberIsDividedByZero_ShouldThrowArithmeticException() {
-        fail();
+        // Arrange
+        SimpleMath math = new SimpleMath();
+        double firstNumber = 6.2D;
+        String expected = "Não existe divisão por 0!";
+
+        // Act
+        ArithmeticException arithmeticException = assertThrows(ArithmeticException.class,
+                () -> math.division(firstNumber, 0D));
+
+        // Assert
+        assertEquals(expected, arithmeticException.getMessage());
     }
 
 
