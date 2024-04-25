@@ -22,12 +22,19 @@ public class SimpleMathTestS4 {
 
     @DisplayName("Test Division")
     @ParameterizedTest
-        //@MethodSource("testDivisionInputParameters")Não é necessário acrescentar nome se os nomes dos metodos forem o mesmo
+    //@MethodSource("testDivisionInputParameters")Não é necessário acrescentar nome se os nomes dos metodos forem o mesmo
     @CsvSource({
             "6.2, 2, 3.1",
             "10, 2, 5",
             "18, 3, 6"
     })
+    /*
+    @CsvSource({
+            "Pelé, Football",
+            "Senna, F1",
+            "Keith Moon, ''"
+    })
+    */
     void testDivision(double firstNumber, double secondNumber, double expectedResult) {
         // Arrange
         String message = firstNumber + " / " + secondNumber + " did not product " + expectedResult;
