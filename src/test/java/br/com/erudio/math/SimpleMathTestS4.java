@@ -3,6 +3,7 @@ package br.com.erudio.math;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -20,9 +21,10 @@ public class SimpleMathTestS4 {
         math = new SimpleMath();
     }
 
-    @DisplayName("Test Division")
+    @DisplayName("Test double sbtraction[firstNumber, secondNumber, expectedResult]")
     @ParameterizedTest
     //@MethodSource("testDivisionInputParameters")Não é necessário acrescentar nome se os nomes dos metodos forem o mesmo
+    /*
     @CsvSource({
             "6.2, 2, 3.1",
             "10, 2, 5",
@@ -35,6 +37,7 @@ public class SimpleMathTestS4 {
             "Keith Moon, ''"
     })
     */
+    @CsvFileSource(resources = "/testDivision.csv")
     void testDivision(double firstNumber, double secondNumber, double expectedResult) {
         // Arrange
         String message = firstNumber + " / " + secondNumber + " did not product " + expectedResult;
