@@ -3,6 +3,7 @@ package br.com.erudio.math;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
@@ -21,8 +22,12 @@ public class SimpleMathTestS4 {
 
     @DisplayName("Test Division")
     @ParameterizedTest
-    @MethodSource("testDivisionInputParameters")
-        // Não é necessário acrescentar nome se os nomes dos metodos forem o mesmo
+        //@MethodSource("testDivisionInputParameters")Não é necessário acrescentar nome se os nomes dos metodos forem o mesmo
+    @CsvSource({
+            "6.2, 2, 3.1",
+            "10, 2, 5",
+            "18, 3, 6"
+    })
     void testDivision(double firstNumber, double secondNumber, double expectedResult) {
         // Arrange
         String message = firstNumber + " / " + secondNumber + " did not product " + expectedResult;
@@ -34,6 +39,7 @@ public class SimpleMathTestS4 {
         assertEquals(expectedResult, current, () -> message);
     }
 
+    /*
     public static Stream<Arguments> testDivisionInputParameters() {
         return Stream.of(
                 Arguments.of(6.2D, 2D, 3.1D),
@@ -41,5 +47,5 @@ public class SimpleMathTestS4 {
                 Arguments.of(18D, 3D, 6D)
         );
     }
-
+    */
 }
